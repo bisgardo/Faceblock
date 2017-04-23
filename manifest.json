@@ -1,0 +1,27 @@
+{
+	"name": "Faceblock",
+	"version": "0.1",
+	"manifest_version": 2,
+	"description": "Removes Facebook ads by detecting them directly from the rendered design.",
+
+	"page_action": {
+		"default_icon": "faceblock.png"
+	},
+
+	"permissions" : [
+		"declarativeContent"
+	],
+
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["https://www.facebook.com/*"],
+			"css": ["faceblock.css"],
+			"js": ["faceblock.js"]
+		}
+	]
+}
